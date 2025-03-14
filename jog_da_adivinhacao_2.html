@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Adivinhação</title>
+</head>
+
+<body>
+    <script>
+        let opcao = prompt("Bem-vindo ao Jogo da Adivinhação! Digite 1 para INICIAR ou 2 para ENCERRAR");
+
+        function iniciarJogo(){
+            let numeroPensado = Math.floor(Math.random() * 10 + 1);
+
+            for (let tentativa = 1; tentativa <= 3; tentativa++) {
+                let chute = prompt("Adivinhe um número de 1 a 10");
+
+                if (chute == numeroPensado) {
+                    alert("Parabéns, você acertou!");
+                    break;
+                } else {
+                    alert("Você errou! Você tem mais " + (3 - tentativa) + " tentativas.");
+                    if (tentativa == 3) {
+                        document.write("Eu tinha pensado no número: " + numeroPensado);
+                    }
+                }
+            }
+
+            let jogarNovamente = prompt("Quer jogar novamente? Digite 'Sim' ou 'Não'");
+            if (jogarNovamente == "Sim") {
+                iniciarJogo(); // Chama novamente a função para reiniciar o jogo
+            } else {
+                document.write("Obrigado por jogar! Até a próxima!");
+            }
+        }
+
+        if (opcao == 1) {
+            iniciarJogo(); // Inicia o jogo
+        } else if (opcao == 2) { // especifica uma nova condição se a anterior for falsa
+            document.write("Jogo encerrado. Até a próxima!");
+        } else {
+            document.write("Opção inválida. O jogo será encerrado.");
+        }
+
+
+    </script>
+</body>
+
+</html>
