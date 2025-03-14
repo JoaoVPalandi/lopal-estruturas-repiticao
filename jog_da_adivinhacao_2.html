@@ -9,49 +9,49 @@
 
 <body>
     <script>
-   let opcao = prompt("Bem-vindo ao Jogo da Adivinhação! Digite 1 para INICIAR ou 2 para ENCERRAR");
+        let opcao = prompt("Bem-vindo ao Jogo da Adivinhação! Digite 1 para INICIAR ou 2 para ENCERRAR");
 
-function iniciarJogo() {
-    let numeroPensado = Math.floor(Math.random() * 10 + 1);
+        function iniciarJogo() {
+            let numeroPensado = Math.floor(Math.random() * 10 + 1);
 
-    for (let tentativa = 1; tentativa <= 3; tentativa++) {
-        let chute = prompt("Adivinhe um número de 1 a 10");
+            for (let tentativa = 1; tentativa <= 3; tentativa++) {
+                let chute = prompt("Adivinhe um número de 1 a 10");
 
-        if (chute == numeroPensado) {
-            alert(" Parabéns, você acertou!");
-            break;
-        } else {
-            alert("Você errou! Você tem mais " + (3 - tentativa) + " tentativas.");
-            if (tentativa == 3) {
-                document.write(" Eu tinha pensado no número: " + numeroPensado );
+                if (chute == numeroPensado) {
+                    alert(" Parabéns, você acertou!");
+                    break;
+                } else {
+                    alert("Você errou! Você tem mais " + (3 - tentativa) + " tentativas.");
+                    if (tentativa == 3) {
+                        document.write(" Eu tinha pensado no número: " + numeroPensado);
+                    }
+                }
+            }
+
+            let jogarNovamente = prompt("Quer jogar novamente? Digite 'Sim' ou 'Não'");
+            if (jogarNovamente == "Sim") {
+                iniciarJogo(); // Chama novamente a função para reiniciar o jogo
+            } else {
+                document.write("Obrigado por jogar! Até a próxima!");
             }
         }
-    }
 
-    let jogarNovamente = prompt("Quer jogar novamente? Digite 'Sim' ou 'Não'");
-    if (jogarNovamente == "Sim") {
-        iniciarJogo(); // Chama novamente a função para reiniciar o jogo
-    } else {
-        document.write(" Obrigado por jogar! Até a próxima!");
-    }
-}
+        if (opcao == 1) {
+            iniciarJogo(); // Inicia o jogo
+        }
 
-if (opcao == 1) {
-    iniciarJogo(); // Inicia o jogo
-} 
+        if (opcao == 2) {
+            document.write("Jogo encerrado. Até a próxima!");
+        }
 
-if (opcao == 2) {
-    document.write("J ogo encerrado. Até a próxima!");
-} 
-
-if (opcao != 1 && opcao != 2) {
-    document.write(" Opção inválida. O jogo será encerrado.");
-}
+        if (opcao != 1 && opcao != 2) {
+            document.write("Opção inválida. O jogo será encerrado.");
+        }
 
 
 
-/*
-        let opcao = prompt("Bem-vindo ao Jogo da Adivinhação! Digite 1 para INICIAR ou 2 para ENCERRAR");
+
+        /*let opcao = prompt("Bem-vindo ao Jogo da Adivinhação! Digite 1 para INICIAR ou 2 para ENCERRAR");
 
         if (opcao == 1) {
             let jogarNovamente = "Sim"; // Variável que controla o loop
@@ -87,7 +87,7 @@ if (opcao != 1 && opcao != 2) {
         } else {
             document.write("Opção inválida. O jogo será encerrado.");
         }
- */
+        */
     </script>
 </body>
 
